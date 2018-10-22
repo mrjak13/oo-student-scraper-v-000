@@ -22,8 +22,11 @@ class Scraper
     h2[:profile_quote] = profile.css(".vitals-text-container .profile-quote").text
 
     websites.each {|s|
+
       url = s.attribute("href").value
-      v = URI.parse(url).host.gsub(".com", "").gsub("www.", "")      
+      v = URI.parse(url).host.gsub(".com", "").gsub("www.", "")
+
+      binding.pry
         h2[v.to_sym] = url
       }
       h2
