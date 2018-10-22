@@ -22,7 +22,7 @@ class Scraper
     h2[:bio] = profile.css(".bio-block p").text
     h2[:profile_quote] = profile.css(".vitals-text-container .profile-quote").text
 
-    
+
 
     websites.each {|s|
       url = s.attribute("href").value
