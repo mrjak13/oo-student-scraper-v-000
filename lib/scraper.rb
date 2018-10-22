@@ -27,7 +27,7 @@ class Scraper
       if v.include? "twitter" || "github" || "linkedin"
         h2[v.to_sym] = url
       else h2[:blog] = url
-      }
+      end}
       h2
 
 
