@@ -17,9 +17,11 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile = Nokogiri::HTML(open(profile_url))
     websites = profile.css(".social-icon-container a")
-    h2 = {}
+
     h2[:bio] = profile.css(".bio-block p").text
     h2[:profile_quote] = profile.css(".vitals-text-container .profile-quote").text
+
+    h2 = {}
 
     websites.each {|s|
       url = s.attribute("href").value
